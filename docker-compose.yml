@@ -1,0 +1,45 @@
+services:
+  app:
+    build: .
+    container_name: hungnh-product-management
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_NAME=product_management
+      - JWT_SECRET=01964c7b_9461_735b_82af_c02f626b7066
+      - JWT_REFRESH_SECRET=01964c7b_9461_735b_82af_c02f626b7066SASS
+    depends_on:
+      - db
+    networks:
+      - product-network
+    restart: always
+
+  db:
+    image: postgres:15-alpine
+    container_name: product-management-db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=product_management
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - product-network
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres", "-d", "product_management"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  product-network:
+    driver: bridge
+
+volumes:
+  postgres_data: 
