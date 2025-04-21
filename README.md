@@ -40,13 +40,11 @@ This is a RESTful API for managing products in an online store. The system provi
 
 ### Logging
 ✅ Comprehensive Logging System: Implemented using logrus with the following features:
-- Request Logging: Detailed logging of API requests
-- Error Logging: Comprehensive error tracking and logging
-- Recovery Logging: System recovery logging for panic scenarios
-- Structured Logging: Implemented using logrus for structured data
-- JSON Format: Logs formatted in JSON for easy parsing and analysis
-- Log Levels: Implemented log level categorization (Info, Error)
-- Middleware: Dedicated middleware for logging management
+- Request Logging: Basic request logging through middleware
+- Error Logging: Basic error tracking in handlers
+- Text Format: Logs formatted in text format
+- Log Levels: Basic log level support (Info, Error)
+- Middleware: Basic logging middleware
 
 ### Performance
 ✅ Pagination: Implemented across all API endpoints
