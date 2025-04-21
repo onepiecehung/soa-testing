@@ -92,8 +92,8 @@ This is a RESTful API for managing products in an online store. The system provi
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd product-management
+git clone https://github.com/onepiecehung/soa-testing.git
+cd soa-testing
 ```
 
 2. Install dependencies:
