@@ -6,6 +6,7 @@ This is a RESTful API for managing products in an online store. The system provi
 ## Features Implemented in This Project
 ### Security
 ✅ JWT Authentication: Implemented comprehensive authentication with access and refresh tokens
+
 ✅ Security Threat Protection: 
 - SQL Injection: Implemented using GORM with prepared statements
 - XSS: Implemented XSSMiddleware
@@ -48,7 +49,9 @@ This is a RESTful API for managing products in an online store. The system provi
 
 ### Performance
 ✅ Pagination: Implemented across all API endpoints
+
 ✅ Query Optimization: Leveraged GORM's optimization features
+
 ✅ Database Level Caching: Implemented through:
 - Prepared Statements
 - Connection Pooling
